@@ -15,5 +15,7 @@ namespace CasaShow.Models
         public DateTime Hora {get;set;}
 
         public string Casa {get;set;}
+
+        public string Categoria {get;set;}
     }
 }

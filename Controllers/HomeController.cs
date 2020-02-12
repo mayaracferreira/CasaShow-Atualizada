@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CasaShow.Models;
 using CasaShow.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace CasaShow.Controllers
 {
@@ -45,12 +46,12 @@ namespace CasaShow.Controllers
             Categoria c3 = new Categoria ();
             c3.Nome = "Samba";
 
-            List <Categoria> catLista = new List<Categoria>();
-            catLista.Add(c1);
-            catLista.Add(c2);
-            catLista.Add(c3);
+            List <Categoria> cateLista = new List<Categoria>();
+            cateLista.Add(c1);
+            cateLista.Add(c2);
+            cateLista.Add(c3);
 ;
-            database.AddRange(catLista);
+            database.AddRange(cateLista);
 
             database.SaveChanges(); 
 
@@ -70,24 +71,38 @@ namespace CasaShow.Controllers
             return Content ("Dados Salvos");
         }
 
-        public IActionResult Relacionamento (){
+         public IActionResult Relacionamento (){
+            return Content("Relacionamento"); 
+        
 
             Evento e1 = new Evento ();
             e1.Nome = "Marilia Mendonça";
             e1.Categoria = database.Categorias.First(c => c.Id == 1);
 
             Evento e2 = new Evento ();
-            e1.Nome = "FalaMansa";
-            e1.Categoria = database.Categorias.First(c => c.Id == 2);
+            e2.Nome = "FalaMansa";
+            e2.Categoria = database.Categorias.First(c => c.Id == 2);
 
             Evento e3 = new Evento ();
-            e1.Nome = "Sambô";
-            e1.Categoria = database.Categorias.First(c => c.Id == 3);
-            return Content("Relacionamento");
+            e3.Nome = "Sambô";
+            e3.Categoria = database.Categorias.First(c => c.Id == 3);
 
             database.Add(e1);
             database.Add(e2);
             database.Add(e3);
+
+            database.SaveChanges();
+
+            
+
+            var listaDeEventos = database.Eventos.Include(e => e.Categoria).ToList();
+
+            listaDeEventos.ForEach(evento => {
+                Console.WriteLine(evento.ToString());
+            }); 
+
+
+            return Content("Relacionamento");
 
         }
 

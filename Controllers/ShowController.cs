@@ -30,7 +30,7 @@ namespace CasaShow.Controllers
             Show aux = database.Shows.First (aux => aux.Id == ID);
           database.Shows.Remove(aux);
           database.SaveChanges();
-           return View ("Show/Proximos"); 
+           return RedirectToAction ("Proximos"); 
        }
 
         [HttpPost]

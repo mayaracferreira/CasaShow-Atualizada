@@ -1,13 +1,36 @@
 @model IEnumerable<CasaShow.Models.Show>
 <h3>Próximos Shows</h3>
 
+<table width="100%" border="1px" style="background-color:white">
+
+<thead>
+    <th>Nome</th>
+    <th>Data</th>
+    <th>Local</th>
+    <th>Valor</th>
+    <th>Editar</th>
+    <th>Excluir</th>
+</thead>
+
+<body>
+
 @foreach(var proximos in Model) 
 
+
 {
-<p>*@proximos.Nome --> @proximos.Hora    Local:*----------------*  @proximos.Casa      R$:@proximos.Valor</p>
-<a href="/Show/Editar/@proximos.Id"  class="btn btn-success">Editar</a>
-<a href="/Show/Deletar/@proximos.Id" class="btn btn-danger">Deletar</a>
+    <tr>
+   
+    <td >@proximos.Nome </td>
+    <td>@proximos.Hora</td>
+    <td>Local: *********** </td>
+    <td>R$: @proximos.Valor</td>     
+    <td><a href="/Show/Editar/@proximos.Id"  class="btn btn-success">Editar</a></td>    
+    <td><a href="/Show/Deletar/@proximos.Id" class="btn btn-danger">Deletar</a></td>
 
 
-
+    </tr>
 }
+
+</body>
+</table>
+
