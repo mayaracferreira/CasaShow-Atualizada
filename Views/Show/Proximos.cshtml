@@ -1,0 +1,13 @@
+@model IEnumerable<CasaShow.Models.Show>
+<h3>Próximos Shows</h3>
+
+@foreach(var proximos in Model) 
+
+{
+<p>*@proximos.Nome --> @proximos.Hora    Local:*----------------*  @proximos.Casa      R$:@proximos.Valor</p>
+<a href="/Show/Editar/@proximos.Id"  class="btn btn-success">Editar</a>
+<a href="/Show/Deletar/@proximos.Id" class="btn btn-danger">Deletar</a>
+
+
+
+}
