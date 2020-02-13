@@ -22,7 +22,7 @@ namespace CasaShow.Controllers
        } 
 
        public IActionResult Editar (int Id){
-           return View ("Cadastrar");
+           return RedirectToAction ("Cadastrar");
        }
 
        

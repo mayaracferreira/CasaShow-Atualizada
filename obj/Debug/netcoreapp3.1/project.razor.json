@@ -20506,13 +20506,33 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\MRCR\\Desktop\\CasaShow\\Views\\Home\\Contato.cshtml",
+      "TargetPath": "Views\\Home\\Contato.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\MRCR\\Desktop\\CasaShow\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\MRCR\\Desktop\\CasaShow\\Views\\Casas\\CadastrarCasas.cshtml",
+      "TargetPath": "Views\\Casas\\CadastrarCasas.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\MRCR\\Desktop\\CasaShow\\Views\\Show\\Cadastrar.cshtml",
       "TargetPath": "Views\\Show\\Cadastrar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\MRCR\\Desktop\\CasaShow\\Views\\Home\\Ingressos.cshtml",
+      "TargetPath": "Views\\Home\\Ingressos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\MRCR\\Desktop\\CasaShow\\Views\\Casas\\CasaseClubes.cshtml",
+      "TargetPath": "Views\\Casas\\CasaseClubes.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20538,11 +20558,6 @@
     {
       "FilePath": "c:\\Users\\MRCR\\Desktop\\CasaShow\\Views\\Show\\Proximos.cshtml",
       "TargetPath": "Views\\Show\\Proximos.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\MRCR\\Desktop\\CasaShow\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
     },
     {

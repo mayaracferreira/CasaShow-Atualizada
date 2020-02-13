@@ -13,6 +13,8 @@ namespace CasaShow.Data
         public DbSet <Categoria> Categorias {get;set;}
         public DbSet <Evento> Eventos {get;set;}
 
+        public DbSet <Casa> Casas {get;set;}
+
                 public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

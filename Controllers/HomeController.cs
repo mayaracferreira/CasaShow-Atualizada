@@ -30,7 +30,7 @@ namespace CasaShow.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Ingressos()
         {
             return View();
         }
@@ -104,6 +104,11 @@ namespace CasaShow.Controllers
 
             return Content("Relacionamento");
 
+        }
+
+                public IActionResult Contato()
+        {
+            return View();
         }
 
 

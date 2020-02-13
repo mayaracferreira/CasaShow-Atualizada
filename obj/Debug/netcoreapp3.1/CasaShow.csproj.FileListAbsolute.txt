@@ -84,4 +84,7 @@ C:\Users\MRCR\Desktop\CasaShow\obj\Debug\netcoreapp3.1\CasaShow.dll
 C:\Users\MRCR\Desktop\CasaShow\obj\Debug\netcoreapp3.1\CasaShow.pdb
 C:\Users\MRCR\Desktop\CasaShow\obj\Debug\netcoreapp3.1\Razor\Views\Show\Cadastrar.cshtml.g.cs
 C:\Users\MRCR\Desktop\CasaShow\obj\Debug\netcoreapp3.1\Razor\Views\Show\Proximos.cshtml.g.cs
-C:\Users\MRCR\Desktop\CasaShow\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\MRCR\Desktop\CasaShow\obj\Debug\netcoreapp3.1\Razor\Views\Home\Ingressos.cshtml.g.cs
+C:\Users\MRCR\Desktop\CasaShow\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contato.cshtml.g.cs
+C:\Users\MRCR\Desktop\CasaShow\obj\Debug\netcoreapp3.1\Razor\Views\Casas\CadastrarCasas.cshtml.g.cs
+C:\Users\MRCR\Desktop\CasaShow\obj\Debug\netcoreapp3.1\Razor\Views\Casas\CasaseClubes.cshtml.g.cs
