@@ -7,8 +7,33 @@
     <input type="Date" class="form-control" asp-for="Data" placeholder="Data">
     <input type="Money" class="form-control" asp-for="Valor"placeholder="Valor">
     <input type="time" class="form-control" asp-for="Hora" placeholder="Horario">
-    <input type="text" class="form-control" asp-for="Casa" placeholder="Casa de Show">
-    <input type="text" class="form-control" asp-for="Categoria" placeholder="Categoria">
+<div class="form-gruop row ">
+			<label class="col-sm-3 col-form-label text-right"
+				for="selecionarCasa">Selecione Casa de show do Evento</label>
+			<div class="col-sm-2">
+				<select class="form-control" id="selecionarCasa" name="selecionarCasa">
+				
+				<option th:each="selecionarCasa : ${todasCasasShow}"
+							th:value="${selecionarCasa}" th:text="${selecionarCasa.nomeCasa}"></option>
+					
+				</select>
+			</div>
+		</div>
+
+
+        <div class="form-gruop row ">
+			<label class="col-sm-3 col-form-label text-right"
+				for="selecionarCasa">Selecione Categoria do Evento</label>
+			<div class="col-sm-2">
+				<select class="form-control" id="selecionarCasa" name="selecionarCasa">
+				
+				<option th:each="selecionarCasa : ${todasCasasShow}"
+							th:value="${selecionarCasa}" th:text="${selecionarCasa.nomeCasa}"></option>
+					
+				</select>
+			</div>
+		</div>
+
     <button class="btn btn-success">Cadastrar</button>
 
 
