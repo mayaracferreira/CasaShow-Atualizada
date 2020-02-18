@@ -14,12 +14,12 @@ namespace CasaShow.Controllers
     public class HomeController : Controller
     {
 
-         public readonly ApplicationDbContext database;
+         public readonly ApplicationsDbContext database;
 
     
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger,ApplicationDbContext database)
+        public HomeController(ILogger<HomeController> logger,ApplicationsDbContext database)
         {
                 this.database = database;
             _logger = logger;

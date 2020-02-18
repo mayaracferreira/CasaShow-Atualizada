@@ -10,9 +10,9 @@ namespace CasaShow.Controllers
     public class CasasController : Controller
     {
 
-         private readonly ApplicationDbContext database;
+         private readonly ApplicationsDbContext database;
 
-        public CasasController (ApplicationDbContext database) {
+        public CasasController (ApplicationsDbContext database) {
                 this.database = database;
         }
 

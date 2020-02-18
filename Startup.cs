@@ -29,16 +29,23 @@ namespace CasaShow
         public void ConfigureServices(IServiceCollection services)
         {
             
-              IServiceCollection serviceCollection = services.AddDbContext <ApplicationDbContext> (options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDbContext<ApplicationDbContext>(options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ApplicationsDbContext>(options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<ApplicationsDbContext>();
             
             services.AddControllersWithViews();
            services.AddRazorPages();
-        }
 
+            services.AddDefaultIdentity<IdentityUser>(config => {
+                config.Password.RequireNonAlphanumeric = true;
+                config.Password.RequireUppercase = false;
+                config.Password.RequireLowercase = false;
+
+            
+        });
+
+    }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

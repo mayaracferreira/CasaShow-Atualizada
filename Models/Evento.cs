@@ -1,5 +1,3 @@
-using CasaShow.Migrations;
-
 namespace CasaShow.Models
 {
     public class Evento
