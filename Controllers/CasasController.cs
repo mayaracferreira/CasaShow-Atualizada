@@ -42,11 +42,19 @@ namespace CasaShow.Controllers
 
         public IActionResult CasaseClubes()  {
 
-            var CasaseClubes = database.Casas.ToList();
+           ViewBag.CasaseClubes = database.Casas.ToList();
 
-            return View(CasaseClubes);
+            return View();
         }
+
+
+
        }
+
+
+
+
+
 
        
       /* public IActionResult Deletar (int ID){

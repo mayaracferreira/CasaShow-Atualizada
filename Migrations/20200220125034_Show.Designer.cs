@@ -3,14 +3,16 @@ using System;
 using CasaShow.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Nova_pasta.Migrations
 {
     [DbContext(typeof(ApplicationsDbContext))]
-    partial class ApplicationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200220125034_Show")]
+    partial class Show
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,19 +36,35 @@ namespace Nova_pasta.Migrations
                     b.ToTable("Casas");
                 });
 
+            modelBuilder.Entity("CasaShow.Models.Categoria", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categorias");
+                });
+
             modelBuilder.Entity("CasaShow.Models.Evento", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Categoria")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                    b.Property<int?>("CategoriaId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CategoriaId");
 
                     b.ToTable("Eventos");
                 });
@@ -57,13 +75,13 @@ namespace Nova_pasta.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Aux")
-                        .HasColumnType("int");
-
                     b.Property<int?>("CasaseClubesId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Categoria")
+                    b.Property<int?>("CategoriaId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Data")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Discriminator")
@@ -82,6 +100,8 @@ namespace Nova_pasta.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CasaseClubesId");
+
+                    b.HasIndex("CategoriaId");
 
                     b.ToTable("Shows");
 
@@ -296,11 +316,22 @@ namespace Nova_pasta.Migrations
                     b.HasDiscriminator().HasValue("Ingresso");
                 });
 
+            modelBuilder.Entity("CasaShow.Models.Evento", b =>
+                {
+                    b.HasOne("CasaShow.Models.Categoria", "Categoria")
+                        .WithMany()
+                        .HasForeignKey("CategoriaId");
+                });
+
             modelBuilder.Entity("CasaShow.Models.Show", b =>
                 {
                     b.HasOne("CasaShow.Models.Casa", "CasaseClubes")
                         .WithMany()
                         .HasForeignKey("CasaseClubesId");
+
+                    b.HasOne("CasaShow.Models.Categoria", "Categoria")
+                        .WithMany()
+                        .HasForeignKey("CategoriaId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

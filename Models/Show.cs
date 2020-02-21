@@ -8,14 +8,16 @@ namespace CasaShow.Models
 
         public string Nome {get;set;}
 
-        public string Data {get;set;}
-
         public float Valor {get;set;}
 
         public DateTime Hora {get;set;}
 
-        public string Casa {get;set;}
+        public int Aux {get;set;}
 
         public string Categoria {get;set;}
+
+        public Casa CasaseClubes {get;set;}
+
+        
     }
 }

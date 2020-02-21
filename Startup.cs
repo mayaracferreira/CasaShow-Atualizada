@@ -37,13 +37,13 @@ namespace CasaShow
             services.AddControllersWithViews();
            services.AddRazorPages();
 
-            services.AddDefaultIdentity<IdentityUser>(config => {
+            /*services.AddDefaultIdentity<IdentityUser>(config => {
                 config.Password.RequireNonAlphanumeric = true;
                 config.Password.RequireUppercase = false;
                 config.Password.RequireLowercase = false;
 
             
-        });
+        });*/
 
     }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -4,6 +4,7 @@ using CasaShow.Controllers;
 using CasaShow.Data;
 using CasaShow.Models;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace CasaShow.Controllers
 {
@@ -17,6 +18,7 @@ namespace CasaShow.Controllers
     
         }
        public IActionResult Cadastrar (){
+           ViewBag.CasaseClubes = database.Casas.ToList();
            return View ();
 
        } 
@@ -35,17 +37,39 @@ namespace CasaShow.Controllers
 
         [HttpPost]
        public IActionResult Salvar (Show show){
-           database.Shows.Add(show);  
-           database.SaveChanges();
-           return RedirectToAction ("Proximos");
+             if (ModelState.IsValid){
+               Show Show = new Show ();
+               Show.Nome = show.Nome;
+               Show.Valor = show.Valor;
+               Show.Hora = show.Hora;
+               Show.Categoria = show.Categoria;
+
+               Show.CasaseClubes = database.Casas.First(c => c.Id == show.Aux);
+               database.Shows.Add(Show);
+               database.SaveChanges();
+               return RedirectToAction ("Proximos");
+           }
+
+           else {
+            
+               ViewBag.CasaseClubes = database.Casas.ToList();
+
+                return RedirectToAction ("Proximos");
+           }
+      
        }
-
-
+       
+        public IActionResult CasaseClubes (){
+          var casas = database.Casas.ToList ();
+          return View (casas);  
+        }
         public IActionResult Proximos()  {
 
-            var proximos = database.Shows.ToList();
-
+            
+            var proximos = database.Shows.Include (p => p.CasaseClubes).ToList ();
             return View(proximos);
+         
         }
     }
+    
 }

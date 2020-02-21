@@ -1,5 +1,5 @@
 @model IEnumerable<CasaShow.Models.Show>
-<h3>Próximos Shows</h3>
+<h3><img src="/Img/fogos.gif" alt=”animated”  width="70" height="60" >Próximos Shows <img src="/Img/fogos.gif" alt=”animated”  width="70" height="60" ></h3>
 
 <table width="100%" border="1px" style="background-color:white">
 
@@ -7,6 +7,7 @@
     <th>Nome</th>
     <th>Data</th>
     <th>Local</th>
+    <th>Categoria</th>
     <th>Valor</th>
     <th>Editar</th>
     <th>Excluir</th>
@@ -20,12 +21,13 @@
 {
     <tr>
    
-    <td >@proximos.Nome </td>
+    <td>@proximos.Nome </td>
     <td>@proximos.Hora</td>
-    <td>@proximos.Casa</td>
+    <td>@proximos.CasaseClubes</td>
+    <td>@proximos.Categoria</td>
     <td>R$: @proximos.Valor</td>     
-    <td><a href="/Show/Editar/@proximos.Id"  class="btn btn-success">Editar</a></td>    
-    <td><a href="/Show/Deletar/@proximos.Id" class="btn btn-danger">Deletar</a></td>
+    <td><a href="/Show/Editar/@proximos.Id"  ><img src="/Img/editar.png" width="35" height="35" ></a></td>    
+    <td><a href="/Show/Deletar/@proximos.Id" ><img src="/Img/delete.png" width="35" height="35" ></a></td>
 
 
     </tr>

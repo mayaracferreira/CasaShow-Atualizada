@@ -1,7 +1,7 @@
 @model IEnumerable<CasaShow.Models.Casa>
 
     
-<h3>Casas & Clubes</h3>
+<h3>Casas & Clubes <img src="/Img/local.png" width="70" height="50" ></h3>
 
 <table width="100%" border="1px" style="background-color:white">
 
@@ -15,7 +15,7 @@
 
 <body>
 
-@foreach(var casa in Model) 
+@foreach(var casa in ViewBag.CasaseClubes) 
 
 
 {
@@ -23,8 +23,8 @@
    
     <td >@casa.Nome </td>
     <td>@casa.Endereço</td>   
-    <td><a href="/Casas/Editar/@casa.Id"  class="btn btn-success">Editar</a></td>    
-    <td><a href="/Casas/Deletar/@casa.Id" class="btn btn-danger">Deletar</a></td>
+    <td><a href="/Casas/Editar/@casa.Id"  ><img src="/Img/editar.png" width="35" height="35" ></a></td>    
+    <td><a href="/Casas/Deletar/@casa.Id" ><img src="/Img/delete.png" width="35" height="35" ></a></td>
 
 
     </tr>
